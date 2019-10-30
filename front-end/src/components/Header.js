@@ -36,16 +36,16 @@ export default class Header extends Component {
     <img src="images/logo.png" width="181" height="45"/>
 </Link>
 
-<ul>
-    <li><a href="#">ABOUT US</a></li>
-    <li><a href="#">OUR SERVICES</a></li>
-    <li><a href="#">CONTACT US</a></li>
-</ul>
+                <ul>
+                    <li><a href="#"><i class="fas fa-users"></i> ABOUT US</a></li>
+                    <li><a href="#"><i class="far fa-handshake"></i> OUR SERVICES</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> CONTACT US</a></li>
+                </ul>
 
 
 
 <div class="log-in">
-    <Link to={cookie.load("isLoggedIn") === undefined ? "/login" : "/"}> {cookie.load("isLoggedIn") === undefined ? "Log in" : "Log out"}</Link>
+    <Link to={cookie.load("isLoggedIn") === undefined ? "/login" : "/"}><i class="fas fa-sign-out-alt"></i> {cookie.load("isLoggedIn") === undefined ? "Log in" : "Log out"}</Link>
 </div>
 
 </div>
