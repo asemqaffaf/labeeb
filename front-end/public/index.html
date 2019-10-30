@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://kit.fontawesome.com/e6a2b6cc7f.js" crossorigin="anonymous"></script>
+    <title>Labeb App</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');     
+  
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bolder;
+        }
+        .header{
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            background-color: #f5f5f5;
+            height: 60px;
+
+            -webkit-box-shadow: 0px 2px 10px 0px rgba(99,99,99,1);
+-moz-box-shadow: 0px 2px 10px 0px rgba(99,99,99,1);
+box-shadow: 0px 2px 10px 0px rgba(99,99,99,1);
+
+        }
+        .header img{line-height: 60px;margin-left: 11px;margin-top:5px}
+        .header ul{margin-left:314px}
+        .header ul li{list-style: none;display: inline;line-height: 60px;padding: 0 11px ; }
+        .header ul li a{text-decoration: none;color: #1a9bce;line-height: 60px;}
+        .header ul li a:hover{border-bottom: 3px #45bfef solid;color: #ee5188}
+  
+        .header .log-in{line-height: 60px;background-color: #45bfef;padding: 0 36px;height: 60px;display: flex; flex-flow: row wrap;}
+        .header .log-in:hover{background-color: black}
+        .header .log-in a{color: white;font-size: 18px;text-decoration: none}
+  
+        .options{
+            width: 100%;
+            height: 85vh;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .options a:hover{text-decoration: none;}
+  
+        .options .buyer{
+            width: 50%;
+            height: 85vh;
+            background-image: url('images/buyer.jpg');
+            background-size: cover;
+            opacity: 0.7;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        .options .buyer:hover{opacity: 0.8}
+        .buyer-title{
+            background: #227ca0;
+            color: white;
+            padding: 50px;
+            font-size: 36px;
+            font-weight:lighter;
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        .options .seller{
+            width: 50%;
+            height: 85vh;
+            background-image: url('images/seller.jpg');
+            background-size: cover;
+            opacity: 0.7;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+        .options .seller:hover{opacity: 0.8}
+        .seller-title{
+            background: #45bfef;
+            color: white;
+            padding: 50px;
+            font-size: 36px;
+            font-weight:lighter;
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        footer{
+            display: flex !important;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f5f5f5;
+            padding: 11px 0;
+        }
+        footer ul:first-of-type{
+            padding: 0;
+            margin: 11px;
+        }
+        footer ul:first-of-type li{
+            list-style: none;
+            display: inline;
+            margin-right: 11px;
+        }
+        footer ul:first-of-type li a{
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+        footer ul:first-of-type li a:hover{color:#45bfef}
+        footer ul:last-of-type{
+            padding: 0;
+            margin: 11px;
+        }
+        footer ul:last-of-type li{
+            list-style: none;
+            display: inline;
+            margin-right: 11px;
+        }
+        footer ul:last-of-type li a{
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+        footer ul:last-of-type li a:hover{color:#45bfef}
+  
+        .login-page{
+          background-color: #45bfef;
+          padding: 111px 524px;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-around;
+          align-items: center;
+          border-radius: 21px 0 21px 0;
+        }
+        .login-page h1{color: white;margin-bottom: 22px}
+        .login-page input:first-of-type{
+          padding: 22px;
+          background-color: #f1f1f1;
+          font-size: 17px;
+          display: block;
+          border: none;
+          border-radius: 11px 0 0 0;
+          margin-bottom: 1px;
+        }
+        .login-page input:last-of-type{
+          padding: 22px;
+          background-color: white;
+          font-size: 17px;
+          display: block;
+          border: none;
+          border-radius: 0 0 11px 0;
+        }
+        .login-page button{
+          width: 236px;
+          padding: 14px;
+          background-color: black;
+          color: white;
+          border: none;
+          border-radius: 11px 0 11px 0;
+          margin-top: 36px;
+        }
+        .login-page button:hover{color: black;background: white;}
+        .login-page p{
+          color: white;
+          margin-top: 36px;
+        }
+        .login-page a{color: #fff;}
+        .login-page a:hover{color:midnightblue}
+  
+        .register-page{
+          padding: 36px 524px;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-around;
+          color: white;
+          background: #fff;
+        }
+        .register-page input{
+          margin-bottom: 11px;
+          padding: 11px;
+          font-size: 14px;
+          border-radius: 11px 0 11px 0;
+          border: 0;
+          background-color: #dddddd;
+        }
+        .register-page label{
+          background-color: #45bfef;
+          padding: 11px;
+          border-radius: 0 11px 0 11px;
+          margin-top: 11px;
+          font-size: 17px;
+        }
+        .register-page button{
+          width: 236px;
+          padding: 14px;
+          background-color: black;
+          color: white;
+          border: none;
+          border-radius: 11px 0 11px 0;
+          margin: 0 auto;
+        }
+        .register-page button:hover{
+          background-color: #45bfef;
+          color: black;
+        }
+        .dash-board-title{
+          width:100%;
+          display:flex !important;
+          flex-flow:row wrap;
+          justify-content: space-around;
+          align-items: center;
+          background-color:#ddd;
+          padding: 11px 0;
+        }
+        .dash-board-title a{
+          color: black;
+          font-size: 21px;
+          padding: 9px;
+        }
+        .dash-board-title a:hover{
+          background-color: #45bfef;
+          color: #fff;
+          text-decoration: none;
+        }
+        .dash-board-title span{
+          color: #2784a9;
+          font-size: 32px;
+          font-weight: lighter;
+          border-bottom: 3px dotted #46bfef;
+        }
+        .dashboard-link{
+          line-height: 70px;
+          height: 70px;
+          margin-right: -524px;
+          font-size: 17px;
+        }
+        .dashboard-link a:hover{text-decoration: none;}
+        .right-dashboard{
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+        .details-page-title{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          margin: 0 auto;
+          align-items: center;
+          background: #ddd;
+          padding: 11px 0;
+        }
+        .details-page-title span{
+          font-size: 24px;
+        }
+        .details-page-input{
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items:center;
+          margin: 0 auto;
+          margin-top: 5px;
+          padding: 6px;
+          font-size: 24px;
+          font-weight: lighter;
+        }
+        .details-button-click{
+          border: 0;
+          padding: 11px;
+          font-size: 17px;
+          background-color: #45bfef;
+          color: white;
+        }
+        .details-button-click:hover{color: #fff; background-color: black;}
+
+        .vehicle-container{
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          align-items: center;
+          padding: 36px 0;
+          background-color: #f1f1f1
+        }
+        .vehicle-container div{
+          display: flex;
+          flex-direction: row;
+          width: 644px;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 14px;
+          border-bottom: 1px #c3c3c3 solid;
+        }
+        .vehicle-container div label{width: 314px;font-size: 19px;font-weight: lighter;color: #0056b3;}
+        .vehicle-container div input{padding: 5px;margin-bottom: 14px;}
+        .price{margin-left: 11px;}
+        .vehicle-container button{
+          font-size: 17px;
+          padding: 14px;
+          border: none;
+          color: white;
+          border-radius: 11px 0 11px 0;
+          background: #1e5799; /* Old browsers */
+          background: -moz-linear-gradient(top,  #1e5799 0%, #637db7 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top,  #1e5799 0%,#637db7 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom,  #1e5799 0%,#637db7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#637db7',GradientType=0 ); /* IE6-9 */
+        }
+        .vehicle-container button:hover{
+          /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7db9e8+0,1e5799+100 */
+          background: #7db9e8; /* Old browsers */
+          background: -moz-linear-gradient(top,  #7db9e8 0%, #1e5799 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top,  #7db9e8 0%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom,  #7db9e8 0%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+        }
+        .vehicle-container select{
+          
+        }
+
+        .dash-top-icon{
+          margin: 0 11px 0 19px;
+          font-size: 18px;
+        }
+        .dash-top-icon a:hover{
+          text-decoration: none;
+        }
+      </style>
+
+  </head>
+
+  <body>
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
